@@ -1,12 +1,18 @@
-{% macro top_nav_item(label, href='#', active=False) %}
+{% macro top_nav_item(label, href='#', active=False, mobile=False) %}
   <a
     href="{{ href }}"
     class="{% if active %}
       bg-indigo-700
     {% else %}
       hover:bg-indigo-500 hover:bg-opacity-75
-    {% endif %} text-white rounded-md px-3 py-2 text-sm font-medium"
-    aria-current="page"
+    {% endif %} 
+    {% if mobile %}
+      block
+    {% endif %} 
+    text-white rounded-md px-3 py-2 text-sm font-medium"
+    {% if active %}
+      aria-current="page"
+    {% endif %}
     >{{ label }}</a
   >
 {% endmacro %}

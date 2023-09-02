@@ -153,33 +153,11 @@
   <!-- Mobile menu, show/hide based on menu state. -->
   <div class="md:hidden" id="mobile-menu" x-cloak x-show="open">
     <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-      <!-- Current: "bg-indigo-700 text-white", Default: "text-white hover:bg-indigo-500 hover:bg-opacity-75" -->
-      <a
-        href="#"
-        class="bg-indigo-700 text-white block rounded-md px-3 py-2 text-base font-medium"
-        aria-current="page"
-        >Dashboard</a
-      >
-      <a
-        href="#"
-        class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md px-3 py-2 text-base font-medium"
-        >Team</a
-      >
-      <a
-        href="#"
-        class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md px-3 py-2 text-base font-medium"
-        >Projects</a
-      >
-      <a
-        href="#"
-        class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md px-3 py-2 text-base font-medium"
-        >Calendar</a
-      >
-      <a
-        href="#"
-        class="text-white hover:bg-indigo-500 hover:bg-opacity-75 block rounded-md px-3 py-2 text-base font-medium"
-        >Reports</a
-      >
+      {{ top_nav_item('Dashboard', '#', active=True, mobile=True) }}
+      {{ top_nav_item('Team', mobile=True) }}
+      {{ top_nav_item('Projects', mobile=True) }}
+      {{ top_nav_item('Calendar', mobile=True) }}
+      {{ top_nav_item('Reports', mobile=True) }}
     </div>
     <div class="border-t border-indigo-700 pb-3 pt-4">
       <div class="flex items-center px-5">
